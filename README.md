@@ -43,35 +43,35 @@ Then open your browser and go to:
 
 http://127.0.0.1:5000/
 
-
 Outfit_Recommendation_Project/
-├── venv/                      # Virtual environment (ignored in .gitignore)
+├── venv/                     # Virtual environment (ignored in .gitignore)
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
-│
-├── models/
-│   ├── data/
-│   ├── models/
-│   │   ├── model_sub/
-│   │   ├── model_top/
-│   │   ├── model_bottom/
-│   │   └── model_shoes/
-│   ├── train_module.py
-│   └── training.py
-│
-├── pictures/
+
+├── models/                   # Pretrained ML models
+│   ├── model_sub/
+│   ├── model_top/
+│   ├── model_bottom/
+│   └── model_shoes/
+
+├── data/                     # Training and sample data
+├── train_module.py           # Training logic
+├── training.py               # Model training runner
+
+├── pictures/                 # Demo and visualization images
 │   ├── tutorial.png
 │   ├── IMG_0159.jpg
 │   ├── top_question.png
 │   └── 51109bb074d95c059f716e48786568f.jpg
-│
-├── proposal.md
-│
-└── py/                        # Main app folder
-    ├── app.py                 # Flask app entry point
-    ├── recognition_module.py
-    ├── ui_module.py
-    ├── static/                # CSS, JS, and images
-    ├── templates/             # HTML files
-    └── __pycache__/           # Ignored automatically
+
+├── proposal.md               # Project proposal and documentation
+
+└── py/                       # Main Flask application folder
+    ├── app.py                # Flask app entry point
+    ├── recognition_module.py # ML prediction logic
+    ├── ui_module.py          # Frontend rendering and routing
+    ├── static/               # CSS, JS, and static assets
+    ├── templates/            # HTML templates
+    └── __pycache__/          # Cached Python files (ignored)
+
