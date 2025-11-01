@@ -1,77 +1,26 @@
-⚙️ Tech Stack
+# 👗 Smart Wardrobe Assistant
 
-Python 3.10+
+An AI-powered **outfit recommendation system** built with **Flask + TensorFlow**, designed to classify clothing items and suggest perfect outfit combinations based on type, occasion, and user preferences.
 
-TensorFlow / Keras
+---
 
-Flask (for web app)
+## ⚙️ Tech Stack
 
-OpenCV & PIL (for image handling)
+- 🐍 **Python 3.10+**
+- 🤖 **TensorFlow / Keras** – for machine learning model training  
+- 🌐 **Flask** – lightweight backend framework for web interface  
+- 🖼️ **OpenCV & PIL** – image preprocessing and analysis  
+- 🗄️ **SQLite3** – lightweight local database  
+- 🎨 **Bootstrap / CSS** – responsive and clean UI  
+- 📊 **Matplotlib & NumPy** – data visualization and processing  
 
-SQLite3 (for local data storage)
+---
 
-Bootstrap / CSS (for UI)
+## 🧩 Installation & Setup
 
-Matplotlib & Numpy (for processing)
+Follow these simple steps to run the project locally 👇
 
-🧩 Installation & Setup
-Step 1: Clone the Repository
-git clone https://github.com/<your-username>/Smart-Wardrobe-Assistant.git
-cd Smart-Wardrobe-Assistant/py
-
-Step 2: Create & Activate Virtual Environment
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# Mac/Linux
-source venv/bin/activate
-
-Step 3: Install Dependencies
-pip install -r ../requirements.txt
-
-
-
-Flask Web App run:
-
-If you’re using the Flask version (with app.py inside py/):
-
-cd ../
-python py/app.py
-
-
-Then open your browser and go to:
-
-http://127.0.0.1:5000/
-
-Outfit_Recommendation_Project/
-├── venv/                     # Virtual environment (ignored in .gitignore)
-├── LICENSE
-├── README.md
-├── requirements.txt
-
-├── models/                   # Pretrained ML models
-│   ├── model_sub/
-│   ├── model_top/
-│   ├── model_bottom/
-│   └── model_shoes/
-
-├── data/                     # Training and sample data
-├── train_module.py           # Training logic
-├── training.py               # Model training runner
-
-├── pictures/                 # Demo and visualization images
-│   ├── tutorial.png
-│   ├── IMG_0159.jpg
-│   ├── top_question.png
-│   └── 51109bb074d95c059f716e48786568f.jpg
-
-├── proposal.md               # Project proposal and documentation
-
-└── py/                       # Main Flask application folder
-    ├── app.py                # Flask app entry point
-    ├── recognition_module.py # ML prediction logic
-    ├── ui_module.py          # Frontend rendering and routing
-    ├── static/               # CSS, JS, and static assets
-    ├── templates/            # HTML templates
-    └── __pycache__/          # Cached Python files (ignored)
-
+### **Step 1: Clone the Repository**
+```bash
+git clone https://github.com/prajnashreekulal/Smart-Wardrobe-Assistant01.git
+cd Smart-Wardrobe-Assistant01/py
