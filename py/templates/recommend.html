@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommendations</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .recommend-container {
+      margin-top: 20px;
+    }
+    .recommend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    .recommend-item {
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .recommend-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .generate-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .generate-btn:hover {
+      background: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div>Smart Wardrobe Assistant</div>
+  <div>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('recommend') }}">Recommendations</a>
+    <a href="{{ url_for('wardrobe') }}">My Wardrobe</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>AI Outfit Recommendations 👕👖👟</h2>
+  <button class="generate-btn" onclick="generateRecommendation()">Generate Outfit</button>
+
+  <div id="recommend-container" class="recommend-container"></div>
+</div>
+
+<script>
+async function generateRecommendation() {
+  document.getElementById("recommend-container").innerHTML = "<p>Generating recommendations... ⏳</p>";
+
+  const res = await fetch("/generate_recommendation");
+  const data = await res.json();
+
+  if(data.success){
+    let html = '<div class="recommend-grid">';
+    data.items.forEach(item => {
+      html += `
+        <div class="recommend-item">
+          <img src="${item.url}" alt="${item.subtype}">
+          <p>${item.subtype}</p>
+        </div>`;
+    });
+    html += '</div>';
+    document.getElementById("recommend-container").innerHTML = html;
+  } else {
+    document.getElementById("recommend-container").innerHTML = "<p>No recommendations found 😢</p>";
+  }
+}
+</script>
+
+</body>
+</html>
