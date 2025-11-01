@@ -63,3 +63,38 @@ Then open your browser and visit:
 👉 http://127.0.0.1:5000/
 
 You’ll see your Smart Wardrobe Dashboard appear!``
+
+
+
+Outfit_Recommendation_Project/
+├── venv/                     # Virtual environment (ignored in .gitignore)
+├── LICENSE
+├── README.md
+├── requirements.txt
+
+├── models/                   # Pretrained ML models (required before running)
+│   ├── model_sub/
+│   ├── model_top/
+│   ├── model_bottom/
+│   └── model_shoes/
+
+├── data/                     # Training and sample data
+├── train_module.py           # Training logic for custom datasets
+├── training.py               # Model training runner
+
+├── pictures/                 # Demo and visualization images
+│   ├── tutorial.png
+│   ├── IMG_0159.jpg
+│   ├── top_question.png
+│   └── 51109bb074d95c059f716e48786568f.jpg
+
+├── proposal.md               # Project proposal and documentation
+
+└── py/                       # Main Flask application folder
+    ├── app.py                # Flask app entry point
+    ├── recognition_module.py # ML prediction logic
+    ├── ui_module.py          # Frontend rendering and routing
+    ├── static/               # CSS, JS, and static assets
+    ├── templates/            # HTML templates
+    └── __pycache__/          # Cached Python files (ignored)
+
